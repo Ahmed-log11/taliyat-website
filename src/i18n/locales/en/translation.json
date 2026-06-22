@@ -1,0 +1,146 @@
+{
+  "org": {
+    "name": "Al-Taliyat Foundation for Quranic Recitation",
+    "shortName": "Al-Taliyat Foundation",
+    "license": "License No. 1100541500",
+    "phone": "+966 57 358 4991",
+    "email": "t.altaliyat@gmail.com"
+  },
+  "header": {
+    "contactUs": "Contact us",
+    "myAccount": "My account",
+    "cart": "Cart"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "governance": "Governance",
+    "donateStore": "Donation Store",
+    "centers": "Centers",
+    "jobs": "Careers",
+    "media": "Media Center",
+    "satisfaction": "Satisfaction Survey",
+    "contact": "Contact"
+  },
+  "hero": {
+    "line1": "Leadership and excellence in empowering reciters",
+    "line2": "through the Holy Quran, in knowledge and skill",
+    "cta": "Learn about us"
+  },
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Follow the foundation's latest news and events",
+    "readMore": "Read more",
+    "viewAll": "All news",
+    "items": {
+      "n1": "Placeholder news item one — replace with real content later",
+      "n2": "Placeholder news item two — replace with real content later",
+      "n3": "Placeholder news item three — replace with real content later"
+    }
+  },
+  "achievements": {
+    "title": "Our Achievements",
+    "subtitle": "Discover the foundation's achievements",
+    "stats": {
+      "students": "Students",
+      "programs": "Programs",
+      "beneficiaries": "Beneficiaries",
+      "centers": "Centers",
+      "teachers": "Teachers",
+      "volunteers": "Volunteers",
+      "hours": "Total Hours"
+    },
+    "units": {
+      "student": "students",
+      "program": "programs",
+      "beneficiary": "beneficiaries",
+      "center": "centers",
+      "teacher": "teachers",
+      "volunteer": "volunteers",
+      "hour": "hours"
+    },
+    "ctaContact": "Contact us",
+    "ctaAbout": "About us"
+  },
+  "donate": {
+    "title": "Donate Now",
+    "subtitle": "Support a project or a case with your donation",
+    "projects": "Donate to Projects",
+    "cases": "Donate to Cases"
+  },
+  "about": {
+    "title": "Al-Taliyat Foundation for Quranic Recitation",
+    "body": "A Quranic foundation offering rigorous instruction for women, girls, and children through flexible, structured programs — empowering students to master the Holy Quran and earn certification through a connected chain of transmission, in an engaging learning environment built on institutional excellence.",
+    "more": "Learn more about us",
+    "slogan": "Where the chain connects and mastery is achieved",
+    "page": {
+      "intro": "A Quranic foundation specialized in teaching and memorizing the Holy Quran for women, girls, and children — preparing a skilled generation connected to the Prophetic chain of transmission.",
+      "visionTitle": "Vision",
+      "vision": "To be a leading reference in Quran memorization for women and girls, and an innovative environment for preparing teachers connected to the noble Prophetic chain of transmission, through rigorous and diverse programs.",
+      "missionTitle": "Mission",
+      "mission": "A Quranic foundation offering rigorous instruction for women, girls, and children through flexible, structured programs. It empowers students to master the Holy Quran and earn certification through a connected chain, and qualifies certified teachers, in an engaging learning environment built on distinguished institutional performance that fosters gradual growth and future expansion.",
+      "valuesTitle": "Our Values",
+      "values": {
+        "v1Title": "Mastery",
+        "v1Body": "We commit to high-quality Quranic education that achieves the highest standards of precision and tajwid.",
+        "v2Title": "Flexibility",
+        "v2Body": "We offer diverse learning models that account for the needs and circumstances of different groups.",
+        "v3Title": "Empowerment",
+        "v3Body": "We build the capabilities of students and teachers, empowering them academically and practically.",
+        "v4Title": "Global Reach",
+        "v4Body": "We seek to expand our educational impact and reach beneficiaries across the world.",
+        "v5Title": "Institutional Excellence",
+        "v5Body": "We adopt professional practices in management and operations to achieve sustainable quality and real impact."
+      },
+      "tracksTitle": "Main Tracks",
+      "tracks": {
+        "t1Title": "Women & Girls Qualification",
+        "t1Body": "Disciplined memorization programs leading to mastery and certification by chain.",
+        "t2Title": "Teacher Preparation",
+        "t2Body": "Training memorizers and certified reciters to master teaching and education.",
+        "t3Title": "Children's Recitation",
+        "t3Body": "Strong early memorization paired with instilling the etiquette of the Quran.",
+        "t4Title": "Digital Platform",
+        "t4Body": "Remote learning reaching across the world, with quality follow-up and effective communication."
+      },
+      "objectivesTitle": "Objectives & Purposes",
+      "objectivesNote": "The foundation's purposes are not for material profit:",
+      "objectives": {
+        "o1": "Specialized teaching of recitation and memorization of the Holy Quran for social groups.",
+        "o2": "Care for teaching the tajwid of the Holy Quran.",
+        "o3": "Memorization of the Holy Quran.",
+        "o4": "Correction of the recitation of the Holy Quran."
+      },
+      "boardTitle": "Board of Trustees",
+      "board": {
+        "chairRole": "Chairman of the Board",
+        "viceRole": "Vice Chairman",
+        "memberRole": "Board Member",
+        "chairName": "Yousef bin Hassan Maghrabi",
+        "viceName": "Rajaa Abdul-Aali Al-Sobhi",
+        "m1Name": "Jameela Nafe Al-Mutairi",
+        "m2Name": "Al-Batoul Mohammed Al-Awfi",
+        "m3Name": "Badria bint Mohammed Hassan"
+      }
+    }
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Partners in success, always happy to serve you",
+    "viewAll": "View all partners"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "rights": "All rights reserved — Al-Taliyat Foundation for Quranic Recitation",
+    "tagline": "In the service of the Book of Allah"
+  },
+  "comingSoon": {
+    "title": "This page is under construction",
+    "body": "We're currently preparing this section. Please check back soon.",
+    "back": "Back to home"
+  },
+  "common": {
+    "loading": "Loading..."
+  }
+}
