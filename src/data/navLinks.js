@@ -4,10 +4,22 @@
 
 export const navLinks = [
   { key: 'nav.home', path: '/' },
-  { key: 'nav.about', path: '/about', dropdown: [] },
+  {
+    key: 'nav.about',
+    path: '/about',
+    dropdown: [
+      { key: 'nav.aboutMenu.whoWeAre', path: '/about' },
+      { key: 'nav.aboutMenu.strategy', path: '/about/strategic-directions' },
+      { key: 'nav.aboutMenu.generalAssembly', path: '/about/general-assembly' },
+      { key: 'nav.aboutMenu.boardMembers', path: '/about/board-members' },
+      { key: 'nav.aboutMenu.executiveDirector', path: '/about/executive-director' },
+      { key: 'nav.aboutMenu.orgStructure', path: '/about/organizational-structure' },
+      { key: 'nav.aboutMenu.licenseCertificate', path: '/about/license-certificate' },
+      { key: 'nav.aboutMenu.commercialRegister', path: '/about/commercial-register' },
+      { key: 'nav.aboutMenu.partners', path: '/about/success-partners' },
+    ],
+  },
   { key: 'nav.governance', path: '/governance', dropdown: [] },
-  { key: 'nav.donateStore', path: '/donate', dropdown: [] },
-  { key: 'nav.centers', path: '/centers', dropdown: [] },
   { key: 'nav.jobs', path: '/jobs' },
   { key: 'nav.media', path: '/media' },
   { key: 'nav.satisfaction', path: '/satisfaction' },

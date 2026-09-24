@@ -15,12 +15,21 @@
     "home": "Home",
     "about": "About",
     "governance": "Governance",
-    "donateStore": "Donation Store",
-    "centers": "Centers",
     "jobs": "Careers",
     "media": "Media Center",
     "satisfaction": "Satisfaction Survey",
-    "contact": "Contact"
+    "contact": "Contact",
+    "aboutMenu": {
+      "whoWeAre": "Who We Are",
+      "strategy": "Strategic Directions",
+      "generalAssembly": "General Assembly Members",
+      "boardMembers": "Board Members",
+      "executiveDirector": "Executive Director",
+      "orgStructure": "Organizational Structure",
+      "licenseCertificate": "Association License Certificate",
+      "commercialRegister": "Commercial Register",
+      "partners": "Success Partners"
+    }
   },
   "hero": {
     "line1": "Leadership and excellence in empowering reciters",

@@ -13,6 +13,14 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/about/strategic-directions" element={<ComingSoon />} />
+        <Route path="/about/general-assembly" element={<ComingSoon />} />
+        <Route path="/about/board-members" element={<ComingSoon />} />
+        <Route path="/about/executive-director" element={<ComingSoon />} />
+        <Route path="/about/organizational-structure" element={<ComingSoon />} />
+        <Route path="/about/license-certificate" element={<ComingSoon />} />
+        <Route path="/about/commercial-register" element={<ComingSoon />} />
+        <Route path="/about/success-partners" element={<ComingSoon />} />
         <Route path="/governance" element={<ComingSoon />} />
         <Route path="/donate" element={<ComingSoon />} />
         <Route path="/centers" element={<ComingSoon />} />

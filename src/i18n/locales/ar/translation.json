@@ -15,12 +15,21 @@
     "home": "الرئيسية",
     "about": "عن المؤسسة",
     "governance": "الحوكمة",
-    "donateStore": "متجر التبرع الالكتروني",
-    "centers": "مراكز المؤسسة",
     "jobs": "بوابة الوظائف",
     "media": "المركز الإعلامي",
     "satisfaction": "قياس الرضا",
-    "contact": "اتصل بنا"
+    "contact": "اتصل بنا",
+    "aboutMenu": {
+      "whoWeAre": "من نحن",
+      "strategy": "التوجهات الاستراتيجية",
+      "generalAssembly": "أعضاء الجمعية العمومية",
+      "boardMembers": "أعضاء مجلس الإدارة",
+      "executiveDirector": "المدير التنفيذي",
+      "orgStructure": "الهيكل التنظيمي",
+      "licenseCertificate": "شهادة ترخيص الجمعية",
+      "commercialRegister": "السجل التجاري",
+      "partners": "شركاء النجاح"
+    }
   },
   "hero": {
     "line1": "الريادة والتميز في تمكين التاليات",
