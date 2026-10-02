@@ -18,6 +18,7 @@ export default function App() {
         <Route path="/about/board-members" element={<ComingSoon />} />
         <Route path="/about/executive-director" element={<ComingSoon />} />
         <Route path="/about/organizational-structure" element={<ComingSoon />} />
+        <Route path="/about/team" element={<ComingSoon />} />
         <Route path="/about/license-certificate" element={<ComingSoon />} />
         <Route path="/about/commercial-register" element={<ComingSoon />} />
         <Route path="/about/success-partners" element={<ComingSoon />} />

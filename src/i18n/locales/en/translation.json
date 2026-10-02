@@ -21,14 +21,11 @@
     "contact": "Contact",
     "aboutMenu": {
       "whoWeAre": "Who We Are",
-      "strategy": "Strategic Directions",
-      "generalAssembly": "General Assembly Members",
       "boardMembers": "Board Members",
       "executiveDirector": "Executive Director",
       "orgStructure": "Organizational Structure",
-      "licenseCertificate": "Association License Certificate",
-      "commercialRegister": "Commercial Register",
-      "partners": "Success Partners"
+      "team": "Our Team",
+      "strategy": "Strategic Directions"
     }
   },
   "hero": {
@@ -39,7 +36,6 @@
   "news": {
     "title": "Latest News",
     "subtitle": "Follow the foundation's latest news and events",
-    "readMore": "Read more",
     "viewAll": "All news",
     "items": {
       "n1": "Placeholder news item one — replace with real content later",
@@ -81,7 +77,6 @@
     "title": "Al-Taliyat Foundation for Quranic Recitation",
     "body": "A Quranic foundation offering rigorous instruction for women, girls, and children through flexible, structured programs — empowering students to master the Holy Quran and earn certification through a connected chain of transmission, in an engaging learning environment built on institutional excellence.",
     "more": "Learn more about us",
-    "slogan": "Where the chain connects and mastery is achieved",
     "page": {
       "intro": "A Quranic foundation specialized in teaching and memorizing the Holy Quran for women, girls, and children — preparing a skilled generation connected to the Prophetic chain of transmission.",
       "visionTitle": "Vision",
@@ -148,8 +143,5 @@
     "title": "This page is under construction",
     "body": "We're currently preparing this section. Please check back soon.",
     "back": "Back to home"
-  },
-  "common": {
-    "loading": "Loading..."
   }
 }
