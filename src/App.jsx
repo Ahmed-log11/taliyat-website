@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ComingSoon from './pages/ComingSoon.jsx';
+import DocumentsPage from './pages/DocumentsPage.jsx';
 
 // Every navbar link routes to a real path. For now all non-home routes render
 // <ComingSoon /> inside the shared <Layout>. Later, swap each `element` for the
@@ -19,10 +20,13 @@ export default function App() {
         <Route path="/about/executive-director" element={<ComingSoon />} />
         <Route path="/about/organizational-structure" element={<ComingSoon />} />
         <Route path="/about/team" element={<ComingSoon />} />
-        <Route path="/about/license-certificate" element={<ComingSoon />} />
+        <Route path="/about/license-certificate" element={<DocumentsPage section="license" />} />
         <Route path="/about/commercial-register" element={<ComingSoon />} />
         <Route path="/about/success-partners" element={<ComingSoon />} />
         <Route path="/governance" element={<ComingSoon />} />
+        <Route path="/governance/bylaws" element={<DocumentsPage section="bylaws" />} />
+        <Route path="/governance/board-minutes" element={<DocumentsPage section="boardMinutes" />} />
+        <Route path="/governance/policies" element={<DocumentsPage section="policies" />} />
         <Route path="/donate" element={<ComingSoon />} />
         <Route path="/centers" element={<ComingSoon />} />
         <Route path="/jobs" element={<ComingSoon />} />

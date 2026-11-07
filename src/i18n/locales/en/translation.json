@@ -25,7 +25,13 @@
       "executiveDirector": "Executive Director",
       "orgStructure": "Organizational Structure",
       "team": "Our Team",
-      "strategy": "Strategic Directions"
+      "strategy": "Strategic Directions",
+      "license": "Licence Certificate"
+    },
+    "governanceMenu": {
+      "bylaws": "Bylaws",
+      "boardMinutes": "Board of Trustees Minutes",
+      "policies": "Policies & Regulations"
     }
   },
   "hero": {
@@ -143,5 +149,42 @@
     "title": "This page is under construction",
     "body": "We're currently preparing this section. Please check back soon.",
     "back": "Back to home"
+  },
+  "docs": {
+    "view": "View",
+    "download": "Download",
+    "empty": {
+      "title": "Content coming soon",
+      "body": "We are uploading these documents. Please check back later."
+    },
+    "license": {
+      "title": "Licence Certificate",
+      "subtitle": "The official licence of Al-Taliyat Foundation",
+      "items": {
+        "license": "Al-Taliyat Foundation Licence"
+      }
+    },
+    "bylaws": {
+      "title": "Bylaws",
+      "subtitle": "The foundation's approved bylaws",
+      "items": {
+        "bylaws": "Current Bylaws"
+      }
+    },
+    "boardMinutes": {
+      "title": "Board of Trustees Minutes",
+      "subtitle": "Official minutes of the Board of Trustees meetings",
+      "items": {
+        "m1": "New Meeting Minutes - 1",
+        "m2": "Meeting Minutes – Ministry of Islamic Affairs",
+        "m3": "Meeting 2 Minutes – Al-Taliyat Foundation",
+        "m4": "Board of Trustees Minutes No. (4)"
+      }
+    },
+    "policies": {
+      "title": "Policies & Regulations",
+      "subtitle": "Approved internal policies and regulations",
+      "items": {}
+    }
   }
 }
