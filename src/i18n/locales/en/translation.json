@@ -175,16 +175,23 @@
       "title": "Board of Trustees Minutes",
       "subtitle": "Official minutes of the Board of Trustees meetings",
       "items": {
-        "m1": "New Meeting Minutes - 1",
-        "m2": "Meeting Minutes – Ministry of Islamic Affairs",
-        "m3": "Meeting 2 Minutes – Al-Taliyat Foundation",
-        "m4": "Board of Trustees Minutes No. (4)"
+        "m1": "First Board of Trustees Meeting Minutes – 2026",
+        "m2": "Second Board of Trustees Meeting Minutes – 2026",
+        "m3": "Third Board of Trustees Meeting Minutes – 2026",
+        "m4": "Fourth Board of Trustees Meeting Minutes – 2026"
       }
     },
     "policies": {
       "title": "Policies & Regulations",
       "subtitle": "Approved internal policies and regulations",
       "items": {}
+    },
+    "strategy": {
+      "title": "Strategic Directions",
+      "subtitle": "The strategic direction of Al-Taliyat Foundation",
+      "items": {
+        "plan": "Foundation Strategic Direction"
+      }
     }
   }
 }

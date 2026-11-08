@@ -14,7 +14,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/about/strategic-directions" element={<ComingSoon />} />
+        <Route path="/about/strategic-directions" element={<DocumentsPage section="strategy" />} />
         <Route path="/about/general-assembly" element={<ComingSoon />} />
         <Route path="/about/board-members" element={<ComingSoon />} />
         <Route path="/about/executive-director" element={<ComingSoon />} />

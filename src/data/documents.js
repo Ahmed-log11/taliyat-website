@@ -4,6 +4,13 @@
 // shows the "coming soon" empty state.
 
 export const documentSections = {
+  strategy: {
+    titleKey: 'docs.strategy.title',
+    subtitleKey: 'docs.strategy.subtitle',
+    items: [
+      { titleKey: 'docs.strategy.items.plan', file: '/docs/strategic-direction.pdf', type: 'pdf' },
+    ],
+  },
   license: {
     titleKey: 'docs.license.title',
     subtitleKey: 'docs.license.subtitle',
@@ -22,9 +29,10 @@ export const documentSections = {
     titleKey: 'docs.boardMinutes.title',
     subtitleKey: 'docs.boardMinutes.subtitle',
     items: [
-      { titleKey: 'docs.boardMinutes.items.m1', file: '/docs/minutes-new-meeting-1.pdf', type: 'pdf' },
-      { titleKey: 'docs.boardMinutes.items.m2', file: '/docs/minutes-ministry-islamic-affairs.pdf', type: 'pdf' },
-      { titleKey: 'docs.boardMinutes.items.m3', file: '/docs/minutes-meeting-2.pdf', type: 'pdf' },
+      // مرتبة حسب رقم الاجتماع (١ → ٤)
+      { titleKey: 'docs.boardMinutes.items.m1', file: '/docs/minutes-meeting-2.pdf', type: 'pdf' },
+      { titleKey: 'docs.boardMinutes.items.m2', file: '/docs/minutes-new-meeting-1.pdf', type: 'pdf' },
+      { titleKey: 'docs.boardMinutes.items.m3', file: '/docs/minutes-ministry-islamic-affairs.pdf', type: 'pdf' },
       { titleKey: 'docs.boardMinutes.items.m4', file: '/docs/minutes-board-4.pdf', type: 'pdf' },
     ],
   },
