@@ -21,7 +21,7 @@
     "contact": "Contact",
     "aboutMenu": {
       "whoWeAre": "Who We Are",
-      "boardMembers": "Board Members",
+      "boardMembers": "Board of Trustees",
       "executiveDirector": "Executive Director",
       "orgStructure": "Organizational Structure",
       "team": "Our Team",
@@ -126,11 +126,11 @@
         "chairRole": "Chairman of the Board",
         "viceRole": "Vice Chairman",
         "memberRole": "Board Member",
-        "chairName": "Yousef bin Hassan Maghrabi",
-        "viceName": "Rajaa Abdul-Aali Al-Sobhi",
-        "m1Name": "Jameela Nafe Al-Mutairi",
-        "m2Name": "Al-Batoul Mohammed Al-Awfi",
-        "m3Name": "Badria bint Mohammed Hassan"
+        "chairName": "Yousef bin Hassan bin Abdulrahman Maghrabi",
+        "viceName": "Rajaa Abdul-Aali bin Ali Al-Sobhi",
+        "m1Name": "Jameela Nafe Huwaifidh Al-Mutairi",
+        "m2Name": "Al-Batoul Mohammed Ismail Al-Awfi",
+        "m3Name": "Badria bint Mohammed bin Rifaat Hassan"
       }
     }
   },
@@ -193,5 +193,19 @@
         "plan": "Foundation Strategic Direction"
       }
     }
+  },
+  "boardPage": {
+    "title": "Board of Trustees",
+    "subtitle": "Members of the Al-Taliyat Foundation Board of Trustees and their positions"
+  },
+  "execDirector": {
+    "title": "Executive Director",
+    "subtitle": "Contact the foundation's executive management",
+    "role": "Executive Director",
+    "name": "Rajaa Abdul-Aali Al-Sobhi",
+    "phoneLabel": "Mobile",
+    "emailLabel": "Email",
+    "phone": "0501684989",
+    "email": "fnar29@gmail.com"
   }
 }

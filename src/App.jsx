@@ -4,6 +4,8 @@ import LandingPage from './pages/LandingPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ComingSoon from './pages/ComingSoon.jsx';
 import DocumentsPage from './pages/DocumentsPage.jsx';
+import BoardMembersPage from './pages/BoardMembersPage.jsx';
+import ExecutiveDirectorPage from './pages/ExecutiveDirectorPage.jsx';
 
 // Every navbar link routes to a real path. For now all non-home routes render
 // <ComingSoon /> inside the shared <Layout>. Later, swap each `element` for the
@@ -16,8 +18,8 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/about/strategic-directions" element={<DocumentsPage section="strategy" />} />
         <Route path="/about/general-assembly" element={<ComingSoon />} />
-        <Route path="/about/board-members" element={<ComingSoon />} />
-        <Route path="/about/executive-director" element={<ComingSoon />} />
+        <Route path="/about/board-members" element={<BoardMembersPage />} />
+        <Route path="/about/executive-director" element={<ExecutiveDirectorPage />} />
         <Route path="/about/organizational-structure" element={<ComingSoon />} />
         <Route path="/about/team" element={<ComingSoon />} />
         <Route path="/about/license-certificate" element={<DocumentsPage section="license" />} />

@@ -1,29 +1,6 @@
 import { useTranslation } from 'react-i18next';
-
-// Reusable page heading band (green) shown at the top of inner pages.
-function PageHeader({ title, subtitle }) {
-  return (
-    <div className="bg-primary py-14 text-center text-white">
-      <div className="container">
-        <h1 className="text-3xl font-bold text-white md:text-4xl">{title}</h1>
-        {subtitle && <p className="mx-auto mt-3 max-w-2xl text-white/80">{subtitle}</p>}
-      </div>
-    </div>
-  );
-}
-
-// A board member card.
-function TrusteeCard({ name, role }) {
-  return (
-    <div className="flex flex-col items-center text-center">
-      <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/50 bg-sand/30">
-        <span className="text-2xl text-gold">◆</span>
-      </div>
-      <div className="mt-3 text-sm font-semibold text-gold">{role}</div>
-      <div className="mt-1 font-bold text-primary">{name}</div>
-    </div>
-  );
-}
+import PageHeader from '../components/ui/PageHeader.jsx';
+import BoardOfTrustees from '../components/sections/BoardOfTrustees.jsx';
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -113,39 +90,7 @@ export default function AboutPage() {
       </section>
 
       {/* Board of trustees */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="section-title">{t('about.page.boardTitle')}</h2>
-          <div className="mt-12 flex flex-col items-center gap-10">
-            {/* Chair + vice */}
-            <div className="flex flex-wrap justify-center gap-12">
-              <TrusteeCard
-                name={t('about.page.board.chairName')}
-                role={t('about.page.board.chairRole')}
-              />
-              <TrusteeCard
-                name={t('about.page.board.viceName')}
-                role={t('about.page.board.viceRole')}
-              />
-            </div>
-            {/* Members */}
-            <div className="flex flex-wrap justify-center gap-12">
-              <TrusteeCard
-                name={t('about.page.board.m1Name')}
-                role={t('about.page.board.memberRole')}
-              />
-              <TrusteeCard
-                name={t('about.page.board.m2Name')}
-                role={t('about.page.board.memberRole')}
-              />
-              <TrusteeCard
-                name={t('about.page.board.m3Name')}
-                role={t('about.page.board.memberRole')}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <BoardOfTrustees />
     </>
   );
 }
