@@ -114,12 +114,13 @@
     th,.title,.subtitle{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
 <div class="toolbar no-print">
   <button class="btn primary" id="addBtn">＋ إضافة عضو</button>
-  <button class="btn" id="printBtn">حفظ PDF / طباعة</button>
+  <button class="btn" id="printBtn">حفظ PDF</button>
   <button class="btn" id="newBtn">محضر جديد</button>
 </div>
 
@@ -289,11 +290,149 @@
     state = blank(); save(); location.reload();
   };
 
-  document.getElementById('printBtn').onclick = () => {
+  // ===== إنشاء ملف PDF (يرسم الصفحات بنفسه فيطلع نفس الشكل على أي جهاز) =====
+  const PX = 1241, PY = 1754, S = 2;              // A4 بدقة 150 نقطة/إنش، مضاعفة للوضوح
+  const L = 106, R = 1098, CW = R - L, TOP = 262, BOTTOM = 1560;
+  const COL = { label:'#E8E1D6', line:'#cfc6b2', ink:'#1f2a26', gold:'#C0A050' };
+  const FONT = '"IBM Plex Sans Arabic", Tahoma, sans-serif';
+  const loadImg = src => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = src; });
+
+  async function buildPages(){
+    try { await document.fonts.load('400 20px "IBM Plex Sans Arabic"'); await document.fonts.load('700 20px "IBM Plex Sans Arabic"'); } catch(e){}
+    const lh = await loadImg(LH);
+    const pages = []; let ctx, y;
+
+    function newPage(){
+      const c = document.createElement('canvas'); c.width = PX * S; c.height = PY * S;
+      ctx = c.getContext('2d'); ctx.scale(S, S);
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, PX, PY);
+      ctx.drawImage(lh, 0, 0, PX, PY);
+      ctx.direction = 'rtl'; ctx.textBaseline = 'middle';
+      pages.push(c); y = TOP;
+    }
+    const ensure = h => { if (y + h > BOTTOM) newPage(); };
+    function text(t, x, yy, { size = 22, weight = 400, align = 'right', maxW } = {}){
+      t = String(t || '');
+      ctx.font = `${weight} ${size}px ${FONT}`;
+      if (maxW) while (ctx.measureText(t).width > maxW && size > 12){ size--; ctx.font = `${weight} ${size}px ${FONT}`; }
+      ctx.fillStyle = COL.ink; ctx.textAlign = align; ctx.fillText(t, x, yy);
+    }
+    function box(x, yy, w, h, fill){
+      if (fill){ ctx.fillStyle = fill; ctx.fillRect(x, yy, w, h); }
+      ctx.strokeStyle = COL.line; ctx.lineWidth = 1.5; ctx.strokeRect(x, yy, w, h);
+    }
+    function titleBox(t, size = 30, h = 62){
+      ensure(h); const w = CW * 0.7, x = L + (CW - w) / 2;
+      ctx.fillStyle = COL.label; ctx.fillRect(x, y, w, h);
+      text(t, x + w / 2, y + h / 2, { size, weight:700, align:'center' }); y += h + 18;
+    }
+    function infoTable(rows){
+      const w = CW * 0.8, x = L + (CW - w) / 2, lw = w * 0.26, rh = 50;
+      rows.forEach(([k, v]) => {
+        ensure(rh);
+        box(x, y, w - lw, rh, '#fff'); box(x + w - lw, y, lw, rh, COL.label);
+        text(k, x + w - 14, y + rh / 2, { size:21, weight:700 });
+        text(v, x + w - lw - 14, y + rh / 2, { size:21, maxW: w - lw - 28 });
+        y += rh;
+      });
+      y += 26;
+    }
+    function wrap(t, maxW, size){
+      ctx.font = `400 ${size}px ${FONT}`;
+      const out = [];
+      String(t || '').split('\n').forEach(par => {
+        let line = '';
+        par.split(' ').forEach(word => {
+          const test = line ? line + ' ' + word : word;
+          if (ctx.measureText(test).width > maxW && line){ out.push(line); line = word; }
+          else line = test;
+        });
+        out.push(line);
+      });
+      while (out.length && !out[out.length - 1].trim()) out.pop();
+      return out;
+    }
+    function section(head, body){
+      ensure(90);
+      ctx.save(); ctx.translate(R - 8, y + 20); ctx.rotate(Math.PI / 4);
+      ctx.fillStyle = COL.gold; ctx.fillRect(-6, -6, 12, 12); ctx.restore();
+      text(head, R - 26, y + 20, { size:24, weight:700 }); y += 50;
+      const lines = wrap(body, CW - 20, 21);
+      if (!lines.length) y += 40;
+      lines.forEach(l => { ensure(40); text(l, R - 10, y + 20, { size:21 }); y += 40; });
+      y += 26;
+    }
+
+    const H = state.header, people = state.people;
+
+    // الصفحة الأولى: المحضر
+    newPage();
+    titleBox('محضر اجتماع');
+    infoTable([['اليوم', H.day], ['التاريخ', H.date], ['رقم الاجتماع', H.num], ['زمن الاجتماع', H.duration], ['وقت الاجتماع', H.time]]);
+    titleBox('أعضاء الاجتماع', 25, 50);
+    const names = people.map(p => p.name).filter(n => n && n.trim());
+    const mrows = Math.max(2, Math.ceil(names.length / 3)), cw = CW / 3, mh = 46;
+    for (let r = 0; r < mrows; r++){
+      ensure(mh);
+      for (let k = 0; k < 3; k++){
+        const x = R - (k + 1) * cw; box(x, y, cw, mh, '#fff');
+        text(names[r * 3 + k] || '', x + cw / 2, y + mh / 2, { size:20, align:'center', maxW: cw - 16 });
+      }
+      y += mh;
+    }
+    y += 30;
+    section('محاور الاجتماع:', H.topics);
+    section('التوصيات:', H.recs);
+
+    // الصفحة الثانية: توقيع الحضور
+    newPage();
+    titleBox('توقيع حضور الاجتماع');
+    infoTable([['اليوم', H.day], ['التاريخ', H.date]]);
+    const cols = [['الاسم', 0.36], ['المسمى الوظيفي', 0.30], ['التوقيع', 0.34]];
+    const header = () => {
+      let x = R;
+      cols.forEach(([t, f]) => { const w = CW * f; x -= w; box(x, y, w, 46, COL.label); text(t, x + w / 2, y + 23, { size:20, weight:600, align:'center' }); });
+      y += 46;
+    };
+    header();
+    const rh = 66, list = people.length ? people : [{}, {}, {}];
+    for (const p of list){
+      if (y + rh > BOTTOM){ newPage(); header(); }
+      let x = R; const ws = cols.map(([, f]) => CW * f);
+      x -= ws[0]; box(x, y, ws[0], rh, '#fff'); text(p.name, x + ws[0] / 2, y + rh / 2, { size:20, align:'center', maxW: ws[0] - 16 });
+      x -= ws[1]; box(x, y, ws[1], rh, '#fff'); text(p.title, x + ws[1] / 2, y + rh / 2, { size:20, align:'center', maxW: ws[1] - 16 });
+      x -= ws[2]; box(x, y, ws[2], rh, '#fff');
+      if (p.sig){
+        const img = await loadImg(p.sig);
+        const k = Math.min((ws[2] - 24) / img.width, (rh - 12) / img.height);
+        const iw = img.width * k, ih = img.height * k;
+        ctx.drawImage(img, x + (ws[2] - iw) / 2, y + (rh - ih) / 2, iw, ih);
+      }
+      y += rh;
+    }
+    return pages;
+  }
+
+  document.getElementById('printBtn').onclick = async () => {
     const unsigned = state.people.filter(p => !p.sig).length;
-    if (unsigned && !confirm(`باقي ${unsigned} من الأعضاء ما وقّعوا. تكمل الطباعة؟`)) return;
-    document.querySelectorAll('textarea').forEach(grow);
-    window.print();
+    if (unsigned && !confirm(`باقي ${unsigned} من الأعضاء ما وقّعوا. تكمل؟`)) return;
+    const btn = document.getElementById('printBtn');
+    if (!window.jspdf){ alert('تعذّر تحميل أداة الـ PDF. تأكد من الاتصال بالإنترنت وحدّث الصفحة.'); return; }
+    btn.disabled = true; btn.textContent = 'جاري تجهيز الملف…';
+    try {
+      const pages = await buildPages();
+      const pdf = new window.jspdf.jsPDF({ unit:'mm', format:'a4' });
+      pages.forEach((c, i) => {
+        if (i) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg', 0.9), 'JPEG', 0, 0, 210, 297);
+      });
+      const name = 'محضر اجتماع' + (state.header.num ? ' رقم ' + state.header.num : '') + '.pdf';
+      pdf.save(name);
+    } catch(e){
+      alert('صار خطأ أثناء تجهيز الملف، حاول مرة ثانية.');
+    } finally {
+      btn.disabled = false; btn.textContent = 'حفظ PDF';
+    }
   };
 
   // ===== لوحة التوقيع =====
